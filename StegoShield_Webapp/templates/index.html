@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StegoShield Web</title>
+</head>
+<body>
+    <h2>🛡️ StegoShield – Image Steganography</h2>
+
+    <h3>🔐 Hide Message</h3>
+    <form method="POST" action="/encode" enctype="multipart/form-data">
+        <input type="file" name="image" required><br><br>
+        <input type="text" name="message" placeholder="Enter your message" required><br><br>
+        <input type="submit" value="Encode">
+    </form>
+
+    {% if download %}
+    <p><a href="/download">Download Encoded Image</a></p>
+    {% endif %}
+
+    <hr>
+
+    <h3>🔍 Extract Message</h3>
+    <form method="POST" action="/decode" enctype="multipart/form-data">
+        <input type="file" name="image" required><br><br>
+        <input type="submit" value="Decode">
+    </form>
+
+    {% if secret %}
+    <p><strong>Hidden Message:</strong> {{ secret }}</p>
+    {% endif %}
+</body>
+</html>
