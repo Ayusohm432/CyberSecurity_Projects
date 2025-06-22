@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Encode Image - StegoShield Web{% endblock %}
+
+{% block content %}
+<div class="content-box">
+    <h2>Hide an Image Inside Another Image</h2>
+    <p>Select a larger "carrier" image and a smaller "secret" image to hide inside it.</p>
+    <form method="POST" action="{{ url_for('handle_encode_image') }}" enctype="multipart/form-data" class="stego-form">
+        <div class="form-group">
+            <label for="carrier">Carrier Image (the one that will be visible):</label>
+            <input type="file" id="carrier" name="carrier" required>
+        </div>
+        <div class="form-group">
+            <label for="secret">Secret Image (the one you want to hide):</label>
+            <input type="file" id="secret" name="secret" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Hide Image">
+        </div>
+    </form>
+</div>
+{% endblock %}

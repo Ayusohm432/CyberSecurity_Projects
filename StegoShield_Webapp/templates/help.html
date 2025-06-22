@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}Help - StegoShield Web{% endblock %}
+
+{% block content %}
+<div class="content-box help-content">
+    <h2>{{ help.title_what_it_does }}</h2>
+    <p>{{ help.text_what_it_does | nl2br | safe }}</p>
+
+    <hr>
+
+    <h2>{{ help.title_how_to_use }}</h2>
+    <p>{{ help.text_how_to_use | nl2br | safe }}</p>
+
+    <hr>
+
+    <h2>{{ help.title_rules_restrictions }}</h2>
+    <p>{{ help.text_rules_restrictions | nl2br | safe }}</p>
+</div>
+{% endblock %}

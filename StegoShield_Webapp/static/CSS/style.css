@@ -1,0 +1,200 @@
+/* General Body & Layout */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    background-color: #4a5568;
+    color: white;
+    padding: 20px 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 5px 0 0;
+    opacity: 0.9;
+}
+
+main {
+    padding: 20px 30px;
+}
+
+footer {
+    background-color: #e2e8f0;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #4a5568;
+}
+
+/* Tab Navigation */
+.tabs {
+    display: flex;
+    background-color: #edf2f7;
+    border-bottom: 2px solid #cbd5e0;
+}
+
+.tabs a {
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.tabs a:hover {
+    background-color: #e2e8f0;
+}
+
+.tabs a.active {
+    color: #2c5282;
+    border-bottom-color: #2c5282;
+}
+
+/* Content Box & Forms */
+.content-box {
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    background: #fdfdfd;
+}
+
+.content-box h2 {
+    margin-top: 0;
+    color: #2d3748;
+}
+
+.stego-form .form-group {
+    margin-bottom: 20px;
+}
+
+.stego-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.stego-form input[type="file"],
+.stego-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.stego-form input[type="submit"], .button-link {
+    background-color: #3182ce;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.stego-form input[type="submit"]:hover, .button-link:hover {
+    background-color: #2b6cb0;
+}
+
+/* Flash Messages */
+.flash {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #e53e3e; /* Error color */
+}
+
+/* Result Page Styling */
+.result-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.image-preview-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.image-preview {
+    text-align: center;
+    width: 45%;
+    min-width: 300px;
+}
+
+.image-preview h3 {
+    margin-bottom: 10px;
+    color: #4a5568;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #e2e8f0;
+    border-radius: 5px;
+}
+
+.secret-message-box {
+    background-color: #edf2f7;
+    border: 1px solid #cbd5e0;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.secret-message-box pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.download-section {
+    text-align: center;
+    margin-top: 30px;
+}
+.download-section p {
+    font-size: 0.9em;
+    color: #718096;
+}
+
+/* Help Page */
+.help-content hr {
+    border: 0;
+    height: 1px;
+    background-color: #cbd5e0;
+    margin: 30px 0;
+}
+.help-content p {
+    line-height: 1.6;
+}

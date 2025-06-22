@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="content-box result-container">
+    <h2>{{ title }}</h2>
+
+    {% if secret_message %}
+        <div class="secret-message-box">
+            <h3>Decoded Message:</h3>
+            <pre>{{ secret_message }}</pre>
+        </div>
+        <a href="{{ url_for('decode_text_page') }}" class="button-link">Decode Another</a>
+    {% endif %}
+
+    {% if original_image and processed_image %}
+    <div class="image-preview-container">
+        <div class="image-preview">
+            <h3>{{ original_title }}</h3>
+            <img src="{{ original_image }}" alt="{{ original_title }}">
+        </div>
+        <div class="image-preview">
+            <h3>{{ processed_title }}</h3>
+            <img src="{{ processed_image }}" alt="{{ processed_title }}">
+        </div>
+    </div>
+    {% endif %}
+
+    {% if download_url %}
+    <div class="download-section">
+        <a href="{{ download_url }}" class="button-link" download>Download Processed Image</a>
+        <p>This image is saved in PNG format to preserve the hidden data.</p>
+    </div>
+    {% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}StegoShield Web{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ StegoShield Web</h1>
+            <p>A web-based steganography tool to hide data in plain sight.</p>
+        </header>
+
+        <nav class="tabs">
+            <a href="{{ url_for('index') }}" class="{{ 'active' if request.endpoint == 'index' else '' }}">Encode Text</a>
+            <a href="{{ url_for('decode_text_page') }}" class="{{ 'active' if request.endpoint == 'decode_text_page' else '' }}">Decode Text</a>
+            <a href="{{ url_for('encode_image_page') }}" class="{{ 'active' if request.endpoint == 'encode_image_page' else '' }}">Encode Image</a>
+            <a href="{{ url_for('decode_image_page') }}" class="{{ 'active' if request.endpoint == 'decode_image_page' else '' }}">Decode Image</a>
+            <a href="{{ url_for('help_page') }}" class="{{ 'active' if request.endpoint == 'help_page' else '' }}">Help</a>
+        </nav>
+
+        <main>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>StegoShield Web Application</p>
+        </footer>
+    </div>
+</body>
+</html>
