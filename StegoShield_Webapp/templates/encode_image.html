@@ -9,11 +9,11 @@
     <form method="POST" action="{{ url_for('handle_encode_image') }}" enctype="multipart/form-data" class="stego-form">
         <div class="form-group">
             <label for="carrier">Carrier Image (the one that will be visible):</label>
-            <input type="file" id="carrier" name="carrier" required>
+            <input type="file" id="carrier" name="carrier" accept="image/*" required>
         </div>
         <div class="form-group">
             <label for="secret">Secret Image (the one you want to hide):</label>
-            <input type="file" id="secret" name="secret" required>
+            <input type="file" id="secret" name="secret" accept="image/*" required>
         </div>
         <div class="form-group">
             <input type="submit" value="Hide Image">

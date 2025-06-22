@@ -9,7 +9,7 @@
     <form method="POST" action="{{ url_for('handle_decode_text') }}" enctype="multipart/form-data" class="stego-form">
         <div class="form-group">
             <label for="encoded">Encoded Image:</label>
-            <input type="file" id="encoded" name="encoded" required>
+            <input type="file" id="encoded" name="encoded" accept="image/*" required>
         </div>
         <div class="form-group">
             <input type="submit" value="Extract Message">

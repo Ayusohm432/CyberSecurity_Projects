@@ -12,7 +12,7 @@ app.secret_key = 'supersecretkey'  # Required for flashing messages
 # --- Configuration ---
 UPLOAD_FOLDER = 'static/uploads'
 OUTPUT_FOLDER = 'static/outputs'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'bmp'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'bmp', 'webp', 'gif'}
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
@@ -34,8 +34,7 @@ def save_file(file_storage):
 # Custom filter to convert newlines to <br> tags
 @app.template_filter('nl2br')
 def nl2br(value):
-    escaped_value = escape(value)
-    return Markup(escaped_value.replace('\n', '<br>\n'))
+    return Markup(value.replace('\n', '<br>\n'))
 
 # --- Main Routes (Tabs) ---
 @app.route('/')
